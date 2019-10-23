@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DemoLoginMVP</string>
+    <string name="name_email">EMAIL ADDRESS</string>
+    <string name="name_passWord">PASSWORD</string>
+    <string name="title_welcome">Welcome back,</string>
+    <string name="title_login">Log In!</string>
+    <string name="forgot_pass">Forgot password?</string>
+    <string name="reminder_me">Reminder me</string>
+    <string name="login">Log in</string>
+</resources>
