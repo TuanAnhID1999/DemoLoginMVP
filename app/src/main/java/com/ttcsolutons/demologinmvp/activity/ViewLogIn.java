@@ -2,6 +2,7 @@ package com.ttcsolutons.demologinmvp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ttcsolutons.demologinmvp.database.DatabaseHelper;
 import com.ttcsolutons.demologinmvp.presenter.PresenterLogin;
 import com.ttcsolutons.demologinmvp.R;
 import com.ttcsolutons.demologinmvp.model.ViewLoginListener;
@@ -17,12 +19,15 @@ public class ViewLogIn extends AppCompatActivity implements ViewLoginListener {
     EditText edUS, edPW;
     Button btnLogin;
     PresenterLogin loginPresenter;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        databaseHelper.createDefaultNotesIfNeed();
         init();
     }
 
@@ -37,7 +42,7 @@ public class ViewLogIn extends AppCompatActivity implements ViewLoginListener {
             public void onClick(View view) {
                 String username = edUS.getText().toString();
                 String password = edPW.getText().toString();
-                loginPresenter.receiverLogin(username,password);
+                loginPresenter.receiverLogin(username,password, getApplication());
             }
         });
     }

@@ -7,4 +7,9 @@
     <string name="forgot_pass">Forgot password?</string>
     <string name="reminder_me">Reminder me</string>
     <string name="login">Log in</string>
+    <string name="title_signup">Sign Up !</string>
+    <string name="title_signUp">Sign Up </string>
+    <string name="title_hello">Hello</string>
+    <string name="name_userName">User Name</string>
+    <string name="accept">I accept th polyce and tems</string>
 </resources>
