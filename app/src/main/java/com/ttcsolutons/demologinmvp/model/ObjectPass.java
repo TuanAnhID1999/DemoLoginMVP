@@ -6,6 +6,9 @@ public class ObjectPass {
     private String passWord;
 
 
+    public ObjectPass(){
+
+    }
     public ObjectPass(int ID, String email, String passWord) {
         this.email = email;
         this.passWord = passWord;

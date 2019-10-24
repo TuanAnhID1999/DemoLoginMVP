@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,10 +30,10 @@ public class ViewLogIn extends AppCompatActivity implements ViewLoginListener {
         getSupportActionBar().hide();
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
         databaseHelper.createDefaultNotesIfNeed();
-        init();
+        init(this);
     }
 
-    public void init(){
+    public void init(final Context context) {
         edUS = findViewById(R.id.input_email);
         edPW = findViewById(R.id.input_password);
         btnLogin = findViewById(R.id.btn_login);
@@ -42,7 +44,7 @@ public class ViewLogIn extends AppCompatActivity implements ViewLoginListener {
             public void onClick(View view) {
                 String username = edUS.getText().toString();
                 String password = edPW.getText().toString();
-                loginPresenter.receiverLogin(username,password, getApplication());
+                loginPresenter.receiverLogin(username, password, context);
             }
         });
     }
@@ -55,6 +57,6 @@ public class ViewLogIn extends AppCompatActivity implements ViewLoginListener {
 
     @Override
     public void loginFailed() {
-        Toast.makeText(this,"Tài khoản or mật khâu không đồng vui lòng thử lại!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Tài khoản or mật khâu không đồng vui lòng thử lại!", Toast.LENGTH_LONG).show();
     }
 }

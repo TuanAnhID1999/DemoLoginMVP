@@ -5,8 +5,9 @@
     android:orientation="vertical">
 
     <TextView
+        android:layout_gravity="center"
         android:textSize="30sp"
-        android:text="Hello main 2"
+        android:text="Chúc mừng bạn đăng nhập thành công !"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
